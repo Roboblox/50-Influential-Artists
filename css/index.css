@@ -107,28 +107,17 @@ header nav a {
   color: black;
 }
 .title-container {
-  position: relative;
-  text-align: center;
-  color: white;
-}
-.title-container img {
+  display: flex;
+  flex-direction: column;
+  background: url("../assets/home.png");
   width: 80%;
+  margin: 0 auto;
+  height: 50vh;
 }
 .title-container .centered {
-  height: 30rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   font-size: 5rem;
-  border: 1px solid grey;
 }
 .title-container .btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
   background-color: white;
   font-size: 16px;
   padding: 12px 24px;
@@ -147,7 +136,6 @@ header nav a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid grey;
 }
 .artists-container .artist .artist2 img {
   width: 100%;
