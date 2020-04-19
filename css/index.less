@@ -1,3 +1,9 @@
+.title-mixin {
+  width: 80%;
+  margin: 0 auto;
+  height: 60vh;
+  color: white;
+}
 html,
 body,
 div,
@@ -109,22 +115,29 @@ header nav a {
 .title-mixin {
   width: 80%;
   margin: 0 auto;
-  height: 60vh;
+  height: 100%;
   color: white;
+}
+.centered-mixin {
+  text-align: center;
+  width: 20rem;
+  font-size: 5rem;
 }
 html {
   font-size: 62.5%;
   /*62.5% means that 10px = 1 rem */
 }
 .title-container {
+  height: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: url("../assets/home.png");
+  height: 60vh;
   width: 80%;
   margin: 0 auto;
-  height: 60vh;
+  height: 100%;
   color: white;
 }
 @media (max-width: 500px) {
@@ -144,7 +157,6 @@ html {
   padding: 12px 24px;
 }
 .artists-container {
-  border: 1px solid black;
   margin-top: 5rem;
   display: flex;
   justify-content: center;
@@ -156,17 +168,13 @@ html {
     justify-content: center;
     align-items: center;
   }
-  .artists-container .artist {
-    width: 100%;
-  }
 }
 .artists-container img:hover {
   opacity: 0.5;
 }
 .artists-container .artist {
-  border: 1px solid black;
-  margin: 2rem 1rem 2rem 1rem;
-  width: 100%;
+  margin: 2rem 4rem 2rem 4rem;
+  width: 30%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

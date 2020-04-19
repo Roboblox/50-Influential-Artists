@@ -113,9 +113,10 @@ header nav a {
   color: black;
 }
 .title-mixin {
+  border: 1px solid black;
   width: 80%;
   margin: 0 auto;
-  height: 60vh;
+  height: 95vh;
   color: white;
 }
 .centered-mixin {
@@ -133,9 +134,11 @@ html {
   justify-content: center;
   align-items: center;
   background: url("../assets/home.png");
+  height: 60vh;
+  border: 1px solid black;
   width: 80%;
   margin: 0 auto;
-  height: 60vh;
+  height: 95vh;
   color: white;
 }
 @media (max-width: 500px) {
