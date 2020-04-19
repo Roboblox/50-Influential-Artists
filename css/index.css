@@ -1,8 +1,14 @@
 .title-mixin {
+  border: 1px solid black;
   width: 80%;
   margin: 0 auto;
-  height: 60vh;
+  height: 95vh;
   color: white;
+}
+.centered-mixin {
+  text-align: center;
+  width: 20rem;
+  font-size: 5rem;
 }
 html,
 body,
@@ -109,13 +115,14 @@ header nav {
 header nav a {
   text-decoration: none;
   margin: 1rem;
-  font-size: 2rem;
+  font-size: 3rem;
   color: black;
 }
 .title-mixin {
   border: 1px solid black;
   width: 80%;
   margin: 0 auto;
+  margin-bottom: 4rem;
   height: 95vh;
   color: white;
 }
@@ -128,16 +135,19 @@ html {
   font-size: 62.5%;
   /*62.5% means that 10px = 1 rem */
 }
+hr {
+  width: 80%;
+}
 .title-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: url("../assets/home.png");
-  height: 60vh;
   border: 1px solid black;
   width: 80%;
   margin: 0 auto;
+  margin-bottom: 4rem;
   height: 95vh;
   color: white;
 }
@@ -153,6 +163,7 @@ html {
 }
 .title-container button {
   background-color: white;
+  color: black;
   width: 20rem;
   font-size: 16px;
   padding: 12px 24px;
