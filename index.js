@@ -231,10 +231,22 @@ const artists = [
 console.log(artists[2].bio, artists[0].name);
 
 /* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
-// artists[8] = {
-//   // .slice() look into slice
-// };
-
+function changeName(artists) {
+  vangough = {
+    id: 8,
+    name: "Vincent van Gough",
+    years: "1853 – 1890",
+    genre: "Post-Impressionism",
+    nationality: "Dutch",
+    bio:
+      "Vincent Willem van Gogh (Dutch: [ˈvɪnsɛnt ˈʋɪləm vɑŋ ˈɣɔx] (listen); 30 March 1853 – 29 July 1890) was a Dutch Post-Impressionist painter who is among the most famous and influential figures in the history of Western art. In just over a decade he created about 2,100 artworks, including around 860 oil paintings, most of them in the last two years of his life. They include landscapes, still lifes, portraits and self-portraits, and are characterised by bold colours and dramatic, impulsive and expressive brushwork that contributed to the foundations of modern art. However, he was not commercially successful, and his suicide at 37 followed years of mental illness and poverty.",
+    wikipedia: "http://en.wikipedia.org/wiki/Vincent_van_Gogh",
+    paintings: 877,
+  };
+  artists.splice(8, 1, vangough);
+  return artists;
+}
+console.log(changeName(artists));
 /* Task 3: Create a function called `getArtistByIndex` that takes two arguments:
  *     (1) artists array
  *     (2) a number which is the desired index in the array.
@@ -244,11 +256,11 @@ console.log(artists[2].bio, artists[0].name);
  * it will return `The artist at index 0 is Amedeo Modigliani`.
 //  */
 // getcarbyindex from yesterday/
-function getArtistByIndex(array, index) {
+function getArtistByIndex(index) {
   const name = artists[index];
   return `The artist at ${name.id} is ${name.name}`;
 }
-console.log(getArtistByIndex(artists, 3));
+console.log(getArtistByIndex(3));
 
 /* Task 4: Create a function called `removeArtist` that takes two arguments:
  *     (1) artists array
@@ -258,53 +270,46 @@ console.log(getArtistByIndex(artists, 3));
  * For example, if removeArtist is invoked with the data and the number 0,
  * it will remove Amedeo Modigliani from our dataset.
  */
-function removeArtists(artists, index) {
-  for (let i = 0; i < artists.length; i++) {
-    if (artists.indexOf([index]) === i) {
-      artists.splice(i, 1);
-    }
-    // }   research splice;
-    return artists;
-  }
+function removeArtists(arr, index) {
+  arr.splice(index, 1);
+  return arr;
 }
-console.log(removeArtists(artists, 4));
+// }   research splice;
 
-console.log(artists);
+console.log(removeArtists(artists, 19));
 
 /**
 
 
 /* Task 5: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born the 20th century (1800-1900) */
 
-function get20s(artists) {}
-//   const artistsNames = [];
-//   for (i = 0; i <= artists.length - 1; i++) {
-//     if (artists[i]("19")) {
-//       let birthYear = artists.slice([i].year);
-//       // .slice first four char birth year
-//       artistsName.push(artists[i].name);
-//       artistsName.push(artists[i].years);
-//       return artistsName;
-//     }
-//   }
-//   return artistsName;
+function get20s() {
+  const artists20 = [];
+  for (i = 0; i <= artists.length - 1; i++) {
+    if (parseInt(artists[i].years) >= 1900) {
+      artists20.push(artists[i].name);
+    }
+  }
+  return artists20;
+}
+console.log(get20s(artists));
+// if (artists[i].years.includes("19") && !artists[i].years.includes("1819")) {
+//   artistsNames.push(artists[i].name);
 // }
-// get20s(artists);
-
 // console.log(artistsNames);
 
 /* Task 6: Create a function called lotsOfArt() that takes artists as an argument and returns an array with names of artists who painted more than 100 paintings */
 
 function lotsOfArt(artists) {
-  for (let index = 0; index < artists.length; index++) {
-    const painting = [];
-    if (artists.paintings >= 100) {
-      painting.push(artists.name);
+  let painting = [];
+  for (let i = 0; i < artists.length; i++) {
+    if (artists[i].paintings > 100) {
+      painting.push(artists[i].name);
     }
-    return painting;
   }
+  return painting;
 }
-lotsOfArt(artists);
+console.log(lotsOfArt(artists));
 /* Task 7: Create a function called `addArtist` that can accept an array of information and add it to the artists array. Then, Add a 21st artist to the array (you) with custom information! 👩‍🎨👨‍🎨 
 
 id: 21
@@ -328,18 +333,22 @@ console.log(
     bio: "or use lorem ipsum",
   })
 );
+[];
 /* Task 8: Create a function called `checkArtist` that accepts a string (name of an artist) and checks if that artist is in the dataset. */
 
 function checkArtist(artists, check) {
+  let checker = [];
   for (let i = 0; i < artists.length; i++) {
     if (artists[i].name === check) {
-      console.log(true);
-    } else {
-      console.log(false);
+      checker.push(true);
+      return true;
     }
   }
+  if (checker[0] === undefined) {
+    return false;
+  }
 }
-checkArtist(artists, "El Greco");
+console.log(checkArtist(artists, "Your Name Here"));
 // 🎨🎨 STRETCH 🎨🎨//
 
 /* STRETCH 1: Programtically console.log HTML element structure 

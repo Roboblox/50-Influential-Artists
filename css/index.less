@@ -106,49 +106,87 @@ header nav a {
   font-size: 2rem;
   color: black;
 }
-.title-container {
-  background: url("../assets/home.png");
+.title-mixin {
   width: 80%;
   margin: 0 auto;
+  height: 60vh;
+  color: white;
 }
-.title-container .centered {
-  height: 30rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 5rem;
+html {
+  font-size: 62.5%;
+  /*62.5% means that 10px = 1 rem */
 }
-.title-container .btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  background-color: white;
-  font-size: 16px;
-  padding: 12px 24px;
-}
-.artists-container {
-  display: flex;
-  justify-content: space-evenly;
-}
-.artists-container img {
-  border-radius: 0.5rem;
-}
-.artists-container .artist {
-  margin: 3rem;
-  width: 25rem;
+.title-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: url("../assets/home.png");
+  width: 80%;
+  margin: 0 auto;
+  height: 60vh;
+  color: white;
 }
-.artists-container .artist .artist2 img {
+@media (max-width: 500px) {
+  .title-container {
+    width: 90%;
+  }
+}
+.title-container .centered {
+  text-align: center;
+  width: 20rem;
+  font-size: 5rem;
+}
+.title-container button {
+  background-color: white;
+  width: 20rem;
+  font-size: 16px;
+  padding: 12px 24px;
+}
+.artists-container {
+  border: 1px solid black;
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+@media (max-width: 500px) {
+  .artists-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .artists-container .artist {
+    width: 100%;
+  }
+}
+.artists-container img:hover {
+  opacity: 0.5;
+}
+.artists-container .artist {
+  border: 1px solid black;
+  margin: 2rem 1rem 2rem 1rem;
   width: 100%;
-  margin-top: -7.1rem;
-  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+@media (max-width: 500px) {
+  .artists-container .artist {
+    width: 90%;
+  }
+}
+.artists-container .artist a {
+  text-decoration: none;
+  color: black;
+  font-size: 2rem;
+  margin: 2rem 0 2rem 0;
+}
+.artists-container .artist .bio {
+  font-size: 1.5rem;
 }
 .artists-container .artist img {
+  border-radius: 0.5rem;
   width: 100%;
 }
